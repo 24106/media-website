@@ -3,94 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>FRAME -- Find Your Next Watch</title>
+    <meta name="theme-colour" content="#f2eadb">
+    <title>REWIND | a media scrapbook</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
      <header class="site-header">
-        <a href="#" class="logo">FRAME<span>.</span></a>
-
-         <nav>
-            <a href="#home">Home</a>
-            <a href="#discover">Discover</a>
-            <a href="#movies">Movies</a>
-            <a href="#shows">TV Shows</a>
-            <a href="#watchlist">Watchlist</a>
-         </nav>
+        <a class="wordmark" href="index.html">REWIND<span>*</span></a>
+        <nav aria-label="Main navigation">
+            <a href="#collection">The collection</a>
+            <a href="#movies" data-jump-filter="movie">Movies</a>
+            <a href="#shows" data-jump-filter="show">TV shows</a>
+            <a href="#watchlist">Saved for later <span id="watchlist-count">0</span></a>
+        </nav>
      </header>
     
     <main>
-        <section class="hero" id="home">
-            <p>DISCOVER YOUR NEXT INTEREST HERE</p>
-            <h1>Find something <br> worth <span>watching</span>.</h1>
-
-            <p class="hero-description">
-                Movies, series, your next favourite plotline. 
-                All in one place. 
-            </p>
-
-            <a href="#discover" class="primary-button">
-                Explore the collection →
-            </a>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">A PERSONAL MEDIA TRACKER</p>
+                <h1>Discover some<br><em>new media ⨾༊󠀺</em></h1>
+                <p class="hero-intro">A comforting website with films, shows, beautiful posters, helpful ratings, and more.</p>
+                <a class="ink-button" href="#collection">Scroll through the different media available <span>↘</span></a>
+            </div>
+            <div class="hero-note note-one">'there's so much i wanna say,<br>but i don't know where to start.'</div>
+            <div class="hero-stamp" aria-hidden="true">
+                <span>CREATOR</span><strong>⋆˚꩜｡⋆<br>CHLOE</strong><span>SHE/THEY</span>
+            </div>
+            <div class="hero-caption">WEBSITE MADE IN CHRISTCHURCH, NEW ZEALAND ᥫ᭡.</div>
         </section>
 
-        <section class="collection" id="discover">
-            <div class="section-heading">
+        <section class="intro-strip">
+            <span> ━━━━⊱⋆⊱·✶·⊰⋆⊰━━━━</span>
+            <span> ━━━━⊱⋆⊱·✶·⊰⋆⊰━━━━</span>
+            <span> ━━━━⊱⋆⊱·✶·⊰⋆⊰━━━━</span>
+        </section>
+
+        <section class="collection section-wrap" id="collection">
+            <div class="section-top">
                 <div>
-                    <p class="eyebrow">THE COLLECTION</p>
-                    <h2>Discover something new</h2>
+                    <p class="eyebrow">THE ARCHIVE</p>
+                    <h2>My favourite <em>media 𐙚˙⋆.</em></h2>
                 </div>
-                <p class="muted">Your next favourite is in here somewhere.</p>
+                <p class="section-aside">
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡿⣯⣟⣿⣶⣶⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣽⣿⣽⣾⢳⣯⣿⡆⠀⠀⣤⣶⣤⠀⠀⣤⣦⣤⡄⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣞⣷⡿⠉⠺⣿⢯⡿⠀⣠⣾⡿⣟⣿⣷⡾⣿⣻⣟⣿⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⡻⣾⢯⣿⠀⠀⢸⣿⠁⣸⡿⣯⣟⣿⣳⣯⣿⢷⣻⣽⣾⡀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⡀⢺⡌⣇⢸⠻⢯⣷⡀⠀⣿⠀⣿⠋⠀⠹⠋⠉⢱⣿⣻⢯⣷⣻⠷⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠉⢴⢫⡟⠙⠻⢶⣮⣝⠀⠙⠀⡇⠀⠀⣠⣴⣾⣟⠷⠿⠿⠝⠛⠁⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣬⣤⣦⣤⣤⣄⣀⠀⠙⣿⢿⣆⠀⠁⠠⠿⣋⣧⣴⣶⢿⡿⣷⣶⣦⡀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⡿⣿⣹⡿⠉⠉⠉⠉⠉⠀⠈⣿⣿⠆⠀⠀⠿⠉⠉⠉⣿⣏⡿⣷⡿⣾⣇⠀⠀
+                                ⠀⠀⣠⣿⡿⣽⡷⣟⣧⣄⣠⡤⠶⣶⡦⠀⠀⠁⠀⣀⠀⠀⠀⠀⠀⠛⠺⣿⣽⣻⣽⣻⣆⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠯⢿⣯⣟⣿⣽⡻⠋⣠⣴⠏⠀⠀⠀⢸⠀⣿⣇⠀⠀⢰⣤⣀⣀⣿⢷⣻⣽⢷⣿⠂
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⣿⠽⢊⣴⣿⣿⣻⣦⣤⡀⠀⢸⡆⢹⣿⡷⣶⡿⣟⣿⣻⣯⡿⣯⣟⣿⠞⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣳⣯⣷⢿⣽⢿⣤⣿⢿⡀⠻⣽⡷⣿⣻⢷⣻⡗⠉⠉⠉⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠋⢷⡿⣯⣟⣯⡿⣞⣿⡇⠀⠈⠻⠿⡽⠟⠋⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢿⣼⣟⡿⣿⢧⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠿⠾⠽⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                </p>
             </div>
 
-            <label for="search" class="visually-hidden">
-                Search titles
-            </label>
-            <input 
-                type="search"
-                id="search"
-                placeholder="Search movies, shows or genres..."
-            >
+            <label class="search-label" for="search">Find something to watch</label>
+            <input id="search" class="search-input" type="search" placeholder="Search a title, genre, or year...">
 
-            <div class="filters" aria-label="Filter media">
-                <button class="filter-button active" data-filter="all">
-                    Everything
-                </button>
-                <button class="filter-button" data-filter="movie">
-                    Movies
-                </button>
-                <button class="filter-button" data-filter="show">
-                    TV Shows
-                </button>
+            <div class="filter-row" aria-label="Filter collection">
+                <button class="filter-chip is-active" data-filter="all">Everything</button>
+                <button class="filter-chip" data-filter="movie">Movies</button>
+                <button class="filter-chip" data-filter="show">TV shows</button>
             </div>
 
-            <div class="media-grid" id="media-grid">
-                <!-- JavaScript will create the media cards here -->
-            </div>
-
-            <p id="empty-message" hidden>
-                No titles found. Try another search!
-            </p>
+            <div id="media-grid" class="poster-grid" aria-live="polite"></div>
+            <p id="empty-message" class="empty-state" hidden>No matches found. Please try another search.</p>
         </section>
 
-        <section class="watchlist-section" id="watchlist">
-            <p class="eyebrow">SAVE IT FOR LATER</p>
-            <h2>Your watchlist</h2>
-            <p class="muted">
-                All the things you want to watch, in one place.
-            </p>
-
-            <div class="media-grid" id="watchlist-grid"></div>
-            <p id="watchlist-empty">Your watchlist is empty for now.</p>
+        <section class="saved-section" id="watchlist">
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow">MEDIA I WOULD LIKE TO WATCH IN THE FUTURE</p>
+                    <h2>Movies & Shows in my <em>Watchlist ˖᯽ ݁˖</em></h2>
+                </div>
+                <p class="section-aside">
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠂⠉⡉⠹⢂⡀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⠀⠀⡠⣟⠀⡮⠁
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⠀⢴⠀⠘⢢⣷⠇
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⢸⡄⠀⢸⠀⠀⠈⢾⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠅⡏⠍⠀⠐⢞⣆⠀⢢⠀⠀⠈⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠤⠤⣄⠲⡢⢤⣀⠀⠀⠁⠀⠀⠀⠈⢪⠂⠀⠳⡄⠀⠀
+                    ⠀⠀⠀⢀⣀⣐⣶⣲⠾⣭⣭⣉⣡⣬⠭⣗⡠⡀⠀⠀⠀⠀⠳⡀⠀⢺⡄⠀
+                    ⠀⠀⠀⠘⠻⣴⠤⣠⠀⢀⠀⠀⠀⠀⠀⠈⠑⠛⢷⢦⡀⠀⠀⠱⡀⠘⡻⡄
+                    ⠐⢦⢄⡀⠘⢯⡍⠁⠀⠈⣷⣂⠀⠀⠀⠀⠀⠀⠀⠀⠙⠢⡀⠀⢱⠀⠛⡁
+                    ⠀⠀⠐⠷⣌⢉⠙⢷⡄⡀⠀⠉⣯⣂⠀⠀⠀⠀⠀⠀⠀⠀⠘⠦⢾⠆⠀⠝
+                    ⠀⠀⠀⠀⠈⠻⢼⡒⠚⠛⠶⠦⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇
+                    ⠀⠀⠀⠀⠀⠀⠀⠉⠢⠶⠀⣀⣀⣤⣀⣀⣀⣀⣀⣀⣀⡤⠤⠤⠤⠦⠋⠀
+                </p>
+            </div>
+            <div id="watchlist-grid" class="poster-grid"></div>
+            <p id="watchlist-empty" class="empty-state">Nothing saved to your Watchlist yet.</p>
         </section>
     </main>
 
-    <footer>
-        <a href="#" class="logo">FRAME<span>.</span></a>
-        <p>Made for people who love media.</p>
-        <p>&copy; 2026 FRAME</p>
+    <footer class="site-footer">
+        <a class="wordmark" href="index.html">REWIND<span>*</span></a>
+        <p>⊹˚₊‧────────────────────   made with love   ────────────────────‧₊˚⊹</p>
+        <p>&copy; 2026 REWIND</p>
     </footer>
 </body>
 </html>
