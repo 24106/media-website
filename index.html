@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- information about the website -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- title shown in browser tab -->
-    <title>Media Website</title>
-
-    <!-- connect our CSS file -->
-     <link rel="stylesheet" href="style.css">
+    <title>FRAME -- Find Your Next Watch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- header, top of website -->
-     <header>
-        <h1>Media Website</h1>
+     <header class="site-header">
+        <a href="#" class="logo">FRAME<span>.</span></a>
 
-        <!-- navigation links -->
          <nav>
             <a href="#home">Home</a>
+            <a href="#discover">Discover</a>
             <a href="#movies">Movies</a>
             <a href="#shows">TV Shows</a>
-            <a href="#watchlist">My Watchlist</a>
+            <a href="#watchlist">Watchlist</a>
          </nav>
      </header>
     
-     <!-- main, majority of content on the page -->
     <main>
-        <!-- home section -->
-        <section id="home">
-            <h2>Find Your Next Watch</h2>
-            <p>
-                Discover amazing movies, binge-worthy TV shows, 
-                and your next favourite interest. 
+        <section class="hero" id="home">
+            <p>DISCOVER YOUR NEXT INTEREST HERE</p>
+            <h1>Find something <br> worth <span>watching</span>.</h1>
+
+            <p class="hero-description">
+                Movies, series, your next favourite plotline. 
+                All in one place. 
             </p>
-            <a href="#movies">Explore Movies</a>
+
+            <a href="#discover" class="primary-button">
+                Explore the collection →
+            </a>
         </section>
 
-        <!-- movies section -->
-        <section id="movies">
-            <h2>Popular Movies</h2>
-            <p>Explore movies you might love.</p>
+        <section class="collection" id="discover">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE COLLECTION</p>
+                    <h2>Discover something new</h2>
+                </div>
+                <p class="muted">Your next favourite is in here somewhere.</p>
+            </div>
 
-            <!-- first movie -->
-            <article>
-                <h3>Movie Title One</h3>
-                <p>Genre: Genre of movie</p>
-                <p>Short description of movie</p>
-            </article>
-            <!-- second movie -->
-            <article>
-                <h3>Movie Title Two</h3>
-                <p>Genre: Genre of movie</p>
-                <p>Short description of movie</p>
-            </article>
-        </section>
+            <label for="search" class="visually-hidden">
+                Search titles
+            </label>
+            <input 
+                type="search"
+                id="search"
+                placeholder="Search movies, shows or genres..."
+            >
 
-        <!-- tv shows section -->
-        <section id="shows">
-            <h2>Popular TV Shows</h2>
-            <p>Find your next series to binge-watch.</p>
+            <div class="filters" aria-label="Filter media">
+                <button class="filter-button active" data-filter="all">
+                    Everything
+                </button>
+                <button class="filter-button" data-filter="movie">
+                    Movies
+                </button>
+                <button class="filter-button" data-filter="show">
+                    TV Shows
+                </button>
+            </div>
 
-            <!-- first show -->
-            <article>
-                <h3>Show Title One</h3>
-                <p>Genre: Genre of show</p>
-                <p>Short description of show</p>
-            </article>
-            <!-- second show -->
-            <article>
-                <h3>Show Title Two</h3>
-                <p>Genre: Genre of show</p>
-                <p>Short description of show</p>
-            </article>
-        </section>
+            <div class="media-grid" id="media-grid">
+                <!-- JavaScript will create the media cards here -->
+            </div>
 
-        <!-- watchlist section -->
-        <section id="watchlist">
-            <h2>My Watchlist</h2>
-            <p>
-                Keep track of the movies and shows you want to watch.
+            <p id="empty-message" hidden>
+                No titles found. Try another search!
             </p>
+        </section>
+
+        <section class="watchlist-section" id="watchlist">
+            <p class="eyebrow">SAVE IT FOR LATER</p>
+            <h2>Your watchlist</h2>
+            <p class="muted">
+                All the things you want to watch, in one place.
+            </p>
+
+            <div class="media-grid" id="watchlist-grid"></div>
+            <p id="watchlist-empty">Your watchlist is empty for now.</p>
         </section>
     </main>
 
-    <!-- footer, bottom of website -->
     <footer>
-        <p>&copy; 2026 Media Website. Made by Chloe Donald.</p>
+        <a href="#" class="logo">FRAME<span>.</span></a>
+        <p>Made for people who love media.</p>
+        <p>&copy; 2026 FRAME</p>
     </footer>
-    
+
 </body>
 </html>
