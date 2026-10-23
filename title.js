@@ -1,5 +1,5 @@
 // builds a separate-looking detail page for the title selected from index.html
-const root = document.querySelector("detail-root");
+const root = document.querySelector("#detail-root");
 const params = new URLSearchParams(window.location.search);
 const id = Number(params.get("id"));
 const item = (window.FRAME_MEDIA || []).find(entry => entry.id === id);
@@ -46,7 +46,7 @@ if (!item) {
         Object.assign(el("a", "ink-button", "Back to the scrapbook ↗"), { href: "index.html#collection" })
     );
 } else {
-    document.title = `${item.title} - FRAME`;
+    document.title = `${item.title} | REWIND`;
     root.replaceChildren();
 
     const back = el("a", "back-link", "← BACK TO THE SCRAPBOOK");
@@ -59,6 +59,15 @@ if (!item) {
     copy.appendChild(el("p", "eyebrow", item.type === "movie" ? "A FILM FROM THE ARCHIVE" : "A SERIES FROM THE ARCHIVE"));
     copy.appendChild(el("h1", "", item.title));
     copy.appendChild(el("p", "detail-deck", "Some stories find a little place to live in your head."));
+    const doodles = el("div", "detail-symbol-doodles");
+    doodles.setAttribute("aria-hidden", "true");
+    [doodles, doodles, doodles].forEach(() => {});
+    for (let i = 0; i < 3; i++) {
+        doodles.appendChild(
+            el("span", `detail-doodle detail-doodle-${i+1}`, item.symbol || "*")
+        );
+    }
+    copy.appendChild(doodles);
 
     const facts = el("div", "detail-facts");
     [String(item.year), item.genre, item.type === "movie" ? "Film" : "TV series"].forEach(value => {
@@ -109,5 +118,5 @@ if (!item) {
     copy.appendChild(actions);
 
     layout.appendChild(copy);
-    root.append(back. layout);
+    root.append(back, layout);
 }

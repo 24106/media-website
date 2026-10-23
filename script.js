@@ -56,7 +56,7 @@ const media = [
         "title": "Girl, Interrupted",
         "type": "movie",
         "year": 1999,
-        "genre": "Psychlogical drama",
+        "genre": "Psychological drama",
         "rating": "4.0/5", 
         "colour": "#777b65",
         "symbol": "𓊔",
@@ -101,7 +101,7 @@ const media = [
         "symbol": "𝄞",
         "quote": "'If you prick us, do we not bleed? If you tickle us, do we not laugh? If you poison us, do we not die? And if you wrong us, shall we not revenge?'",
         "description": "A Polish Jewish pianist struggles to survive the destruction of Warsaw during World War II.",
-        "poster": ""
+        "poster": "posters/the-pianist.jpg"
     },
     {
         "id": 9,
@@ -127,7 +127,7 @@ const media = [
         "symbol": "𐙚",
         "quote": "'Every story has an end. But in life, every ending is just a new beginning.'",
         "description": "A carefree young woman becomes a nanny to a serious little girl, and both begin to change.",
-        "poster": "posters/uptown-girls"
+        "poster": "posters/uptown-girls.jpg"
     },
     {
         "id": 11,
@@ -140,7 +140,7 @@ const media = [
         "symbol": "❀",
         "quote": "'All that crap you hear on TV about communication and expressing your feelings is a lie. No one really cares what you have to say.'",
         "description": "An isolated high-school student finds a way to express herself after a traumatic experience.",
-        "poster": "posters/speak"
+        "poster": "posters/speak.jpg"
     },
     {
         "id": 12,
@@ -218,7 +218,7 @@ const media = [
         "symbol": "꩜",
         "quote": "'I thought you were the kind of girl who knew when to say when.'  'I don't really know what kind of girl I am.'",
         "description": "A witty teenager navigates an unexpected pregnancy and the complicated decisions that follow.",
-        "poster": "posters/juno"
+        "poster": "posters/juno.jpg"
     }, 
     {
         "id": 18,
@@ -244,7 +244,7 @@ const media = [
         "symbol": "➳",
         "quote": "'So what happens then we get back?'  'I don't know. I guess we try to forget.'  'I don't wanna forget.'",
         "description": "A teenager volunteers for a televised fight for survival in a dystopian society.",
-        "poster": "posters/the-hunger-games"
+        "poster": "posters/the-hunger-games.jpg"
     },
     {
         "id": 20,
@@ -321,7 +321,7 @@ const media = [
         "colour": "#a18eae",
         "symbol": "𓃗",
         "quote": "'I will spread my wings and smother you with a million tiny feathers.  'I'll light your feathers on fire and watch them turn to ash.''",
-        "description": "A dreamy teenager enters an intense first relationship that challenges her ideas about espace.",
+        "description": "A dreamy teenager enters an intense first relationship that challenges her ideas about escape.",
         "poster": "posters/i-believe-in-unicorns.jpg"
     },
     {
@@ -360,7 +360,7 @@ const media = [
         "colour": "#485f6d",
         "symbol": "⋆˙⟡",
         "quote": "'Mankind was born on Earth. It was never meant to die here.'",
-        "description": "A team of explorers travels beyond our galazy in search of a future for humanity.",
+        "description": "A team of explorers travels beyond our galaxy in search of a future for humanity.",
         "poster": "posters/interstellar.jpg"
     },
     {
@@ -732,7 +732,7 @@ const media = [
         "title": "Donnie Darko",
         "type": "movie",
         "year": 2001,
-        "genre": "Psychlogical sci-fi",
+        "genre": "Psychological sci-fi",
         "rating": "4.0/5", 
         "colour": "#51536b",
         "symbol": "݁Ი𐑼",
@@ -797,7 +797,7 @@ const media = [
         "title": "Black Swan",
         "type": "movie",
         "year": 2010,
-        "genre": "Psychlogical horror",
+        "genre": "Psychological horror",
         "rating": "4.2/5", 
         "colour": "#33302d",
         "symbol": "𝄞⨾𓍢ִ",
@@ -1063,7 +1063,7 @@ const media = [
         "symbol": "🌐︎",
         "quote": "'King Arthur came a lot, right?'",
         "description": "Philomena Cunk offers an absurdly tour through the history of the Earth.",
-        "poster": ""
+        "poster": "posters/cunk-on-earth.jpg"
     },
     {
         "id": 83,
@@ -1200,7 +1200,7 @@ const media = [
         "title": "The Office",
         "type": "show",
         "year": 2005,
-        "genre": "Comedy",
+        "genre": "Comedy / sitcom",
         "rating": "4.25/5", 
         "colour": "#3b5998",
         "symbol": "☏",
@@ -1220,6 +1220,19 @@ const media = [
         "quote": "'When you're going to change the world, don't ask for permission.'",
         "description": "An animated series explores the tragic conflict between two sisters torn apart by war, magic, and technology.",
         "poster": "posters/arcane.jpg"
+    },
+    {
+        "id": 95,
+        "title": "Modern Family",
+        "type": "show",
+        "year": 2009,
+        "genre": "Comedy / sitcom",
+        "rating": "4.23/5", 
+        "colour": "#9e3c20",
+        "symbol": "⌞ ⌝",
+        "quote": "'Life is full of change. Some big, some small. I learned a long time ago, you can fight it, or you can try to make the best of it. And that's a lot easier if you've got people who love you helping you face whatever life throws at you.'",
+        "description": "A mockumentary sitcom that follows three different parts of an extended family, showing odd parenting, insane lore, and relatable chaotic family dynamics.",
+        "poster": "posters/modern-family.jpg"
     }
 ]; 
 
@@ -1253,30 +1266,16 @@ function makePoster(item) {
         img.src = item.poster;
         img.alt = `${item.title} alternative poster`;
         img.loading = "lazy";
-        img.addEventListener("error", () => { img.remove(); poster.classList.remove("has-image"); });
+        img.addEventListener("error", () => { 
+            img.remove(); 
+            poster.classList.remove("has-image");
+        });
         poster.classList.add("has-image");
         poster.appendChild(img);
     }
-    const fram = document.createElement("div");
+    const frame = document.createElement("div");
     frame.className = "poster-frame";
-    const top = document.createElement("div");
-    top.className = "poster-topline";
-    const kind = document.createElement("span");
-    kind.textContent = item.type === "movie" ? "A FILM" : "A SERIES";
-    const year = document.createElement("span");
-    year.textContent = String(item.year);
-    top.append(kind, year);
-    const symbol = document.createElement("div");
-    symbol.className = "poster-symbol";
-    symbol.textContent = item.symbol || "*";
-    symbol.setAttribute("aria-hidden", "true");
-    const title = document.createElement("div");
-    title.className = "poster-title";
-    title.textContent = item.title;
-    const foot = document.createElement("div");
-    foot.className = "poster-footer";
-    foot.textContent = "REWIND · PERSONAL ARCHIVE";
-    frame.append(top, symbol, title, foot);
+    frame.setAttribute("aria-hidden", "true")
     poster.appendChild(frame);
     return poster;
 }
@@ -1330,6 +1329,7 @@ function createCard(item) {
             ? watchlist.filter(id => id !== item.id)    
             : [...watchlist, item.id]
         localStorage.setItem("rewind-watchlist", JSON.stringify(watchlist));
+        updateDetailSave();
         renderCollection();
     });
     updateSave();
@@ -1373,24 +1373,23 @@ function makeDetailPage() {
         detailRoot.append(eyebrow, heading, message, back);
         return;
     }
-    document.title = `${item.title} - REWIND`;
+    document.title = `${item.title} | REWIND`;
     detailRoot.replaceChildren();
     const back = document.createElement("a"); back.className = "back-link"; back.href = "index.html#collection"; back.textContent = "← BACK TO THE SCRAPBOOK";
     const layout = document.createElement("div"); layout.className = "detail-layout";
     const posterColumn = document.createElement("div"); posterColumn.className = "detail-poster"; posterColumn.appendChild(makePoster(item));
     const copy = document.createElement("div"); copy.className = "detail-copy";
-    const eyebrow = document.createElement("p"); eyebrow.className = "eyebrow"; eyebrow.textContent = item.type === "movie" ? "A FILM FROM YOUR ARCHIVE" : "A SERIES FROM YOUR ARCHIVE";
+    const eyebrow = document.createElement("p"); eyebrow.className = "eyebrow"; eyebrow.textContent = item.type === "movie" ? "A FILM FROM THE ARCHIVE" : "A SERIES FROM THE ARCHIVE";
     const heading = document.createElement("h1"); heading.textContent = item.title;
-    const deck = document.createElement("p"); deck.className = "detail-deck"; deck.textContent = "Some interests you could go on about for hours.";
     const facts = document.createElement("div"); facts.className = "detail-facts";
     [String(item.year), item.genre, item.type === "movie" ? "Movie": "TV series"].forEach(value => {
         const pill = document.createElement("span"); pill.className = "fact-pill"; pill.textContent = value; facts.appendChild(pill);
     });
-    const rule! = document.createElement("hr"); rule1.className = "detail-rule";
-    const synopsisHeading = document.createElement("h2"); synopsisHeading.textContent = "The little synopsis";
+    const rule1 = document.createElement("hr"); rule1.className = "detail-rule";
+    const synopsisHeading = document.createElement("h2"); synopsisHeading.textContent = "A Short Overview:";
     const synopsis = document.createElement("p"); synopsis.className = "detail-description"; synopsis.textContent = item.description;
     const rule2 = document.createElement("hr"); rule2.className = "detail-rule";
-    const ratingHeading = document.createElement("h2"); ratingHeading.textContent = "A rating note";
+    const ratingHeading = document.createElement("h2"); ratingHeading.textContent = "Rating & Type of Media:";
     const panel = document.createElement("div"); panel.className = "rating-panel";
     const ratingBox = document.createElement("div"); ratingBox.className = "rating-box";
     const ratingLabel = document.createElement("span"); ratingLabel.textContent = `${sourceFor(item)} rating`;
@@ -1402,7 +1401,7 @@ function makeDetailPage() {
     typeBox.append(typeLabel, typeValue); panel.append(ratingBox, typeBox);
     const actions = document.createElement("div"); actions.className = "detail-actions";
     const save = document.createElement("button"); save.type = "button"; save.className = "ink-button";
-    function updateDetailSave() { save.textContent = watchlist.includes(item.id) ? "♥ saved" : "♡ saved for later"; }
+    function updateDetailSave() { save.textContent = watchlist.includes(item.id) ? "♥ saved" : "♡ save for later"; }
     save.addEventListener("click", () => {
         watchlist = watchlist.includes(item.id) ? watchlist.filter(savedId => savedId !== item.id) : [...watchlist, item.id];
         localStorage.setItem("rewind-watchlist", JSON.stringify(watchlist));
@@ -1411,7 +1410,7 @@ function makeDetailPage() {
     updateDetailSave();
     const all = document.createElement("a"); all.className = "outline-button"; all.href = "index.html#collection"; all.textContent = "Back to all titles";
     actions.append(save, all);
-    copy.append(eyebrow, heading, deck, facts, rule1, synopsisHeading, synopsis, rule2, ratingHeading, panel, actions);
+    copy.append(eyebrow, heading, facts, rule1, synopsisHeading, synopsis, rule2, ratingHeading, panel, actions);
     layout.append(posterColumn, copy);
     detailRoot.append(back, layout);
 }
