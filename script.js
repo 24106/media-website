@@ -1243,7 +1243,7 @@ const emptyMessage = document.querySelector("#empty-message");
 const watchlistEmpty = document.querySelector("#watchlist-empty");
 const watchlistCount = document.querySelector("#watchlist-count");
 const filterButtons = document.querySelectorAll("[data-filter]");
-const detailRoot = document.querySelector("#detail-root")
+const detailRoot = document.querySelector("#detail-root");
 let currentFilter = "all";
 let watchlist = [];
 
