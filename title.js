@@ -90,7 +90,7 @@ if (!item) {
     copy.appendChild(panel);
 
     const actions = el("div", "detail-actions");
-    const save = el("button", "ink-button", "♡ Save for later");
+    const save = el("button", "ink-button", "♡ Save For Later");
     save.type = "button";
     const savedKey = window.FRAME_WATCHLIST_KEY || "frame-watchlist";
 
@@ -98,7 +98,7 @@ if (!item) {
         let saved = []
         try { saved = JSON.parse(localStorage.getItem(savedKey) || "[]"); } catch {}
         const isSaved = Array.isArray(saved) && saved.includes(item.id);
-        save.textContent = isSaved ? "♥ Saved for later" : "♡ Save for later";
+        save.textContent = isSaved ? "♥ Saved" : "♡ Save For Later";
     }
 
     save.addEventListener("click", () => {
@@ -112,8 +112,8 @@ if (!item) {
     });
     updateSave();
 
-    const backButton = el("a", "outline-button", "Back to all titles");
-    backButton.href = "index.html#collection";
+    const backButton = el("a", "outline-button", "Back to Homepage");
+    backButton.href = "index.html";
     actions.append(saved, backButton);
     copy.appendChild(actions);
 

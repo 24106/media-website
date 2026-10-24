@@ -1320,7 +1320,7 @@ function createCard(item) {
     save.type = "button";
     function updateSave() {
         const isSaved = watchlist.includes(item.id);
-        save.textContent = isSaved ? "♥ Saved" : "♡ Save for later";
+        save.textContent = isSaved ? "♥ Saved" : "♡ Save For Later";
         save.classList.toggle("is-saved", isSaved);
         save.setAttribute("aria-pressed", String(isSaved));
     }
@@ -1329,7 +1329,6 @@ function createCard(item) {
             ? watchlist.filter(id => id !== item.id)    
             : [...watchlist, item.id]
         localStorage.setItem("rewind-watchlist", JSON.stringify(watchlist));
-        updateDetailSave();
         renderCollection();
     });
     updateSave();
@@ -1350,7 +1349,7 @@ function renderCollection() {
     mediaGrid.replaceChildren(...filtered.map(createCard));
     if (emptyMessage) emptyMessage.hidden = filtered.length > 0;
     const count = document.querySelector("#collection-count");
-    if (count) count.textContent = `${filtered.length} little ${filtered.length === 1 ? "story" : "stories"} in this view ✷`;
+    if (count) count.textContent = `${filtered.length} different types of media displayed in this search ✷`;
     if (watchlistGrid) {
         const saved = media.filter(item => watchlist.includes(item.id));
         watchlistGrid.replaceChildren(...saved.map(createCard));
@@ -1401,14 +1400,14 @@ function makeDetailPage() {
     typeBox.append(typeLabel, typeValue); panel.append(ratingBox, typeBox);
     const actions = document.createElement("div"); actions.className = "detail-actions";
     const save = document.createElement("button"); save.type = "button"; save.className = "ink-button";
-    function updateDetailSave() { save.textContent = watchlist.includes(item.id) ? "♥ saved" : "♡ save for later"; }
+    function updateDetailSave() { save.textContent = watchlist.includes(item.id) ? "♥ Saved" : "♡ Save For Later"; }
     save.addEventListener("click", () => {
         watchlist = watchlist.includes(item.id) ? watchlist.filter(savedId => savedId !== item.id) : [...watchlist, item.id];
         localStorage.setItem("rewind-watchlist", JSON.stringify(watchlist));
         updateDetailSave();
     });
     updateDetailSave();
-    const all = document.createElement("a"); all.className = "outline-button"; all.href = "index.html#collection"; all.textContent = "Back to all titles";
+    const all = document.createElement("a"); all.className = "outline-button"; all.href = "index.html"; all.textContent = "Back to Homepage";
     actions.append(save, all);
     copy.append(eyebrow, heading, facts, rule1, synopsisHeading, synopsis, rule2, ratingHeading, panel, actions);
     layout.append(posterColumn, copy);
